@@ -1,14 +1,16 @@
-var overlay = document.getElementById("preloader");
-
-window.addEventListener('load', function () {
-    preloader.style.display = 'none';
-})
-
 $(function () {
 
     //pre loader
+    $(window).ready(function () {
+        $('#preloader').hide();
+    });
+    // navigation button auto collapse in mobile
+    $('.navbar_ul li a').on('click', function () {
+        $('.navbar-collapse').removeClass('show');
 
-    // navigation
+    })
+
+    //auto scroll
     $('.nav-link').click(function () {
         var sectionTo = $(this).attr('href');
         $('html, body').animate({
@@ -16,11 +18,11 @@ $(function () {
         }, 1000);
     });
 
-    // JavaScript Media Queries
-    $('.navbar_ul li a').on('click', function () {
+    // pop up close /// never use this before scroll //
+    /*$('.navbar_ul li a').on('click', function () {
         $('.navbar-collapse').removeClass('show');
 
-    })
+    })*/
 
 
     //toolttip
